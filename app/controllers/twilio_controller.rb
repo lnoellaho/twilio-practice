@@ -4,7 +4,7 @@ class TwilioController < ApplicationController
   skip_before_action :verify_authenticity_token
 
   def index
-    
+
   end
 
   def voice
@@ -25,9 +25,14 @@ class TwilioController < ApplicationController
 
   def room
     response = Twilio::TwiML::VoiceResponse.new
-    response.dial do |dial|
-      response.say('You are in room 1234')
-      dial.conference('Room 1234')
+    pin = params["Digits"]
+    if pin == 1234
+      response.dial do |dial|
+        response.say('You are in room 1234')
+        dial.conference('Room 1234')
+      end
+    else
+      response.say('Stripper hotline')
     end
     render :xml => response.to_xml
   end
