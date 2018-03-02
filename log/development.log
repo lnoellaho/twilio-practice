@@ -182,3 +182,43 @@ Processing by TwilioController#voice as */*
 Completed 200 OK in 174ms (Views: 0.2ms)
 
 
+Started POST "/twilio/voice" for ::1 at 2018-03-02 11:30:19 -0800
+Processing by TwilioController#voice as */*
+  Parameters: {"foo"=>"bar"}
+Completed 500 Internal Server Error in 148ms
+
+
+  
+Gem::LoadError (Specified 'sqlite3' for database adapter, but the gem is not loaded. Add `gem 'sqlite3'` to your Gemfile (and ensure its version is at the minimum required by ActiveRecord).):
+  
+app/controllers/twilio_controller.rb:11:in `voice'
+Started POST "/twilio/voice" for ::1 at 2018-03-02 11:32:17 -0800
+Processing by TwilioController#voice as */*
+  Parameters: {"foo"=>"bar"}
+Completed 200 OK in 174ms (Views: 0.2ms)
+
+
+Started POST "/twilio/voice" for ::1 at 2018-03-02 11:41:40 -0800
+Processing by TwilioController#voice as */*
+  Parameters: {"foo"=>"bar"}
+Completed 200 OK in 117ms (Views: 0.2ms)
+
+
+Started POST "/twilio/conference" for ::1 at 2018-03-02 11:41:56 -0800
+Processing by TwilioController#conference as */*
+  Parameters: {"foo"=>"bar"}
+Completed 200 OK in 1ms (Views: 0.1ms)
+
+
+Started POST "/twilio/conference" for ::1 at 2018-03-02 13:57:33 -0800
+Processing by TwilioController#conference as */*
+  Parameters: {"foo"=>"bar"}
+Completed 200 OK in 1ms (Views: 0.2ms)
+
+
+Started POST "/twilio/conference" for ::1 at 2018-03-02 14:00:43 -0800
+Processing by TwilioController#conference as */*
+  Parameters: {"foo"=>"bar"}
+Completed 200 OK in 1ms (Views: 0.1ms)
+
+
