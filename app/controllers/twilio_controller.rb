@@ -28,11 +28,16 @@ class TwilioController < ApplicationController
     pin = params["Digits"]
     if pin == '1234'
       response.dial do |dial|
-        response.say('You are in room 1234')
+        response.say('You are in Leeann\'s room')
         dial.conference('Room 1234')
       end
+    elsif pin == '5678'
+      response.dial do |dial|
+        response.say('You are in kevin\'s stripper room')
+        dial.conference('Stripper Room')
+      end
     else
-      response.say('Stripper hotline')
+      response.say('You are not in a room')
     end
     render :xml => response.to_xml
   end
