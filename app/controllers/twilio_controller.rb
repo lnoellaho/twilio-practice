@@ -26,7 +26,7 @@ class TwilioController < ApplicationController
   def room
     response = Twilio::TwiML::VoiceResponse.new
     pin = params["Digits"]
-    if pin == 1234
+    if pin == '1234'
       response.dial do |dial|
         response.say('You are in room 1234')
         dial.conference('Room 1234')
