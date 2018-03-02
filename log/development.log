@@ -418,3 +418,9 @@ Processing by Rails::WelcomeController#index as HTML
 Completed 200 OK in 295ms (Views: 13.1ms)
 
 
+Started POST "/twilio/room" for ::1 at 2018-03-02 14:38:37 -0800
+Processing by TwilioController#room as */*
+  Parameters: {"foo"=>"bar"}
+Completed 200 OK in 225ms (Views: 0.1ms)
+
+

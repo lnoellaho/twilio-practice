@@ -13,10 +13,16 @@ class TwilioController < ApplicationController
 
   def conference
     response = Twilio::TwiML::VoiceResponse.new
-    response.gather(input: 'dtmf', timeout: 10, numDigits: 4) do |gather|
+    response.gather(input: 'dtmf', timeout: 10, numDigits: 4, action:'/twilio/room') do |gather|
       gather.say('Please enter your four digit pin.')
     end
+    render :xml => response.to_xml
+  end
+
+  def room
+    response = Twilio::TwiML::VoiceResponse.new
     response.dial do |dial|
+      response.say('You are in room 1234')
       dial.conference('Room 1234')
     end
     render :xml => response.to_xml
