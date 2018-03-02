@@ -3,6 +3,10 @@ class TwilioController < ApplicationController
   require 'twilio-ruby'
   skip_before_action :verify_authenticity_token
 
+  def index
+    
+  end
+
   def voice
     response = Twilio::TwiML::VoiceResponse.new do |r|
       r.say("Yay! You're on Rails!", voice: "alice")
@@ -13,7 +17,7 @@ class TwilioController < ApplicationController
 
   def conference
     response = Twilio::TwiML::VoiceResponse.new
-    response.gather(input: 'dtmf', timeout: 10, numDigits: 4, action:'/twilio/room', method: 'GET') do |gather|
+    response.gather(input: 'dtmf', timeout: 10, numDigits: 4, action:'/twilio/room') do |gather|
       gather.say('Please enter your four digit pin.')
     end
     render :xml => response.to_xml
