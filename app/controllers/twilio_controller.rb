@@ -36,6 +36,11 @@ class TwilioController < ApplicationController
         response.say('You are in kevin\'s stripper room')
         dial.conference('Stripper Room')
       end
+    elsif pin == '9876'
+      response.dial do |dial|
+        response.say('You are in Christina\'s stripper room')
+        dial.conference('Third Room')
+      end
     else
       response.say('You are not in a room')
     end
