@@ -29,7 +29,7 @@ class TwilioController < ApplicationController
     if pin == '1234'
       response.dial do |dial|
         response.say('You are in Leeann\'s room')
-        dial.conference('Room 1234')
+        dial.conference('Room 1234', waitUrl: 'http://twimlets.com/holdmusic?Bucket=com.twilio.music.electronica')
       end
     elsif pin == '5678'
       response.dial do |dial|
