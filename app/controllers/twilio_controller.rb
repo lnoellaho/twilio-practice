@@ -41,9 +41,11 @@ class TwilioController < ApplicationController
         response.say('You are in Christina\'s stripper room')
         dial.conference('Third Room')
       end
-    else
-      response.say('You are not in a room')
     end
+    response.say('Invalid pin number')
+    # else
+    #   response.say('You are not in a room')
+    # end
     render :xml => response.to_xml
   end
 
