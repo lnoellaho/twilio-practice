@@ -43,6 +43,7 @@ class TwilioController < ApplicationController
       end
     end
     response.say('Invalid pin number')
+    response.redirect('/twilio/conference', method: 'POST')
     # else
     #   response.say('You are not in a room')
     # end
