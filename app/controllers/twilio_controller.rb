@@ -29,17 +29,17 @@ class TwilioController < ApplicationController
     if pin == '1234'
       response.dial do |dial|
         response.say('You are in Leeann\'s room')
-        dial.conference('Room 1234', waitUrl: 'http://twimlets.com/holdmusic?Bucket=com.twilio.music.electronica')
+        dial.conference('Room 1', waitUrl: 'http://twimlets.com/holdmusic?Bucket=com.twilio.music.classical')
       end
     elsif pin == '5678'
       response.dial do |dial|
-        response.say('You are in kevin\'s stripper room')
-        dial.conference('Stripper Room')
+        response.say('You are in kevin\'s room')
+        dial.conference('Room 2')
       end
     elsif pin == '9876'
       response.dial do |dial|
-        response.say('You are in Christina\'s stripper room')
-        dial.conference('Third Room')
+        response.say('You are in Christina\'s room')
+        dial.conference('Room 3')
       end
     end
     response.say('Invalid pin number')
